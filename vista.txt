@@ -1,0 +1,22 @@
+SELECT * 
+FROM empleado
+INNER JOIN (
+cargo
+INNER JOIN departamento ON departamento.iddep = cargo.departamento
+) ON empleado.cargo = cargo.idcargo
+
+SELECT codigo,primnom,segnom,primapel,segapel,edad,nomcargo,sueldo,iddep,nomdep
+FROM empleado
+INNER JOIN (
+cargo
+INNER JOIN departamento ON departamento.iddep = cargo.departamento
+) ON empleado.cargo = cargo.idcargo
+
+create view empleadoview as
+SELECT codigo,primnom,segnom,primapel,segapel,edad,nomcargo,sueldo,iddep,nomdep
+FROM empleado
+INNER JOIN (
+cargo
+INNER JOIN departamento ON departamento.iddep = cargo.departamento
+) ON empleado.cargo = cargo.idcargo
+
